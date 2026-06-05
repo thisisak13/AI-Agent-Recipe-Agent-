@@ -1,0 +1,56 @@
+{
+  "name": "AI Recipe Preparation Agent",
+  "description": "An AI-powered recipe generator that suggests personalized recipes based on available ingredients, cuisine type, dietary preferences, servings, and cooking time using IBM Granite models and watsonx.ai.",
+  "version": "1.0.0",
+  "type": "streamlit-app",
+  "author": "Your Name",
+  "tech_stack": [
+    "Streamlit",
+    "IBM watsonx.ai",
+    "IBM Granite Models",
+    "Python",
+    "RAG (Retrieval Augmented Generation)"
+  ],
+  "inputs": {
+    "cuisine": {
+      "type": "string",
+      "options": ["Indian", "Chinese", "Italian"]
+    },
+    "diet_preference": {
+      "type": "string",
+      "options": ["Vegetarian", "Vegan", "Non-Vegetarian"]
+    },
+    "servings": {
+      "type": "integer",
+      "min": 1,
+      "max": 10
+    },
+    "cooking_time": {
+      "type": "integer",
+      "unit": "minutes"
+    },
+    "ingredients": {
+      "type": "text",
+      "description": "List of available ingredients"
+    }
+  },
+  "outputs": {
+    "recipe_name": "string",
+    "ingredients_list": "array",
+    "instructions": "text",
+    "cooking_time": "string",
+    "substitutions": "text"
+  },
+  "model": {
+    "provider": "IBM",
+    "name": "granite-13b-instruct",
+    "purpose": "Recipe generation and natural language cooking instructions"
+  },
+  "features": [
+    "Personalized recipe generation",
+    "Ingredient-based suggestions",
+    "Diet-aware cooking plans",
+    "Smart substitutions",
+    "RAG-based recipe retrieval"
+  ]
+}
